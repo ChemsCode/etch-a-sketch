@@ -1,12 +1,6 @@
-function makeGrid(rows, colums){
-
-
-}
-
-
 
 const container = document.querySelector("#container");
-
+const clearBtn = document.querySelector("#clearBtn")
 
 for(let i = 0 ; i < (16*16); i++){
     let gridElement = document.createElement("div");
@@ -22,3 +16,9 @@ for(let i = 0 ; i < 16*16; i++){
         gridSquares[i].style.backgroundColor = "black"; 
     });
 }
+
+clearBtn.addEventListener("click", ()=>{
+    for(let i = 0 ; i < 16*16; i++){
+        gridSquares[i].style.backgroundColor = "white"; 
+    }
+});

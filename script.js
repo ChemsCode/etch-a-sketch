@@ -1,3 +1,11 @@
+function assignEventListener(){
+    for(let i = 0 ; i < numberOfSquares*numberOfSquares; i++){
+        gridSquares[i].addEventListener("mouseover", () => {
+            gridSquares[i].style.backgroundColor = "black"; 
+        });
+    }
+}
+
 function squareDimensions(nOfSquares){
     return Math.sqrt((Math.pow(768,2))/(Math.pow(nOfSquares,2)))
 }
@@ -21,19 +29,34 @@ const clearBtn = document.querySelector("#clearBtn");
 
 let numberOfSquares = 64;
 const containerDimension = 768;
+
+
 makeGrid(numberOfSquares);
 
-const gridSquares = document.querySelectorAll(".gridSquare")
+let gridSquares = document.querySelectorAll(".gridSquare")
 
+assignEventListener();
 
-for(let i = 0 ; i < numberOfSquares*numberOfSquares; i++){
-    gridSquares[i].addEventListener("mouseover", () => {
-        gridSquares[i].style.backgroundColor = "black"; 
-    });
-}
+// for(let i = 0 ; i < numberOfSquares*numberOfSquares; i++){
+//     gridSquares[i].addEventListener("mouseover", () => {
+//         gridSquares[i].style.backgroundColor = "black"; 
+//     });
+// }
 
 clearBtn.addEventListener("click", ()=>{
     for(let i = 0 ; i < numberOfSquares*numberOfSquares; i++){
         gridSquares[i].style.backgroundColor = "white"; 
     }
+    while(container.firstChild) {
+        container.removeChild(container.lastChild);
+        console.log("in while loop");
+    }
+    
+    numberOfSquares = prompt("Please enter the number of squares!");
+    
+    makeGrid(numberOfSquares);
+
+    gridSquares = document.querySelectorAll(".gridSquare")
+
+    assignEventListener();
 });

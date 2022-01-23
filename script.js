@@ -26,6 +26,7 @@ function makeGrid(nOfSquares){
 
 const container = document.querySelector("#container");
 const clearBtn = document.querySelector("#clearBtn");
+const resizeBtn = document.querySelector("#resizeBtn");
 
 let numberOfSquares = 64;
 const containerDimension = 768;
@@ -37,16 +38,15 @@ let gridSquares = document.querySelectorAll(".gridSquare")
 
 assignEventListener();
 
-// for(let i = 0 ; i < numberOfSquares*numberOfSquares; i++){
-//     gridSquares[i].addEventListener("mouseover", () => {
-//         gridSquares[i].style.backgroundColor = "black"; 
-//     });
-// }
 
 clearBtn.addEventListener("click", ()=>{
     for(let i = 0 ; i < numberOfSquares*numberOfSquares; i++){
         gridSquares[i].style.backgroundColor = "white"; 
     }
+});
+
+resizeBtn.addEventListener("click", ()=>{
+
     while(container.firstChild) {
         container.removeChild(container.lastChild);
         console.log("in while loop");

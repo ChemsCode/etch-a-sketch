@@ -1,6 +1,21 @@
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #CEDADA;
+}
+
+#mid-section{
+    background-color: #CFFFE5;
+    display: flex;
+
+}
+
+#side-panel{
+    background-color: #B6C8A9;
+    width: 250px;
+    border-radius: 10px;
 }
 
 #container{
@@ -10,15 +25,13 @@ body{
     height: 768px;
     width: 768px;
     margin: 50px;
+    background-color: white;
 }
 
 #container .gridSquare{
-    height: 48px;
-    width: 48px;
     -moz-box-shadow:    inset 0 0 1x #000000;
     -webkit-box-shadow: inset 0 0 1px #000000;
     box-shadow:         inset 0 0 1px #000000;
- 
 }
 
 .gridSquare:hover {
